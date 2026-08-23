@@ -4,7 +4,7 @@ __global__ void vector_add(const float* A, const float* B, float* C, int N) {
     // Write code here
     int i = blockIdx.x * blockDim.x + threadIdx.x;
 
-    if (i > N){
+    if (i >= N){
         return;
     }
 
