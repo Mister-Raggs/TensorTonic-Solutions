@@ -4,7 +4,7 @@ __global__ void relu_kernel(const float* input, float* output, int N) {
     // Write code here
     int i = blockIdx.x * blockDim.x + threadIdx.x;
 
-    if (i > N){
+    if (i >= N){
         return;
     }
 
