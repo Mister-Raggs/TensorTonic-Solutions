@@ -6,10 +6,11 @@ __global__ void gemv_kernel(const float* A, const float* x, float* y, int M, int
     if (row >= M){
         return;
     }
-    y[row] = 0;
-    for (int i = 0; i < N; i++){
-        y[row] += x[i] * A[row*N + i];
+    float sum = 0.0f;
+    for (int i = 0; i < N; i++) {
+        sum += A[row * N + i] * x[i];
     }
+    y[row] = sum;
     return;
 }
 
