@@ -3,7 +3,7 @@
 
 __global__ void rms_norm_kernel(const float* input, const float* gamma, float* output, int M, int N, float eps) {
     // Write code here
-    int row = blockIdx.x * blockDim.x + threadIdx.x;
+    int row = blockIdx.x;
 
     if (row >= M){
         return;
